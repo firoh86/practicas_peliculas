@@ -1,0 +1,33 @@
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, #242d3d, #303658, #242d3d);
+}
+.footer__content {
+  text-align: center;
+  width: 60%;
+  color: #dee2eb;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer__rigths {
+  width: 100%;
+  border-top: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background: #a36736;
+  color: white;
+}
+.footer__image {
+  border-bottom: 2px solid white;
+  width: 100vw;
+  height: 50px;
+  background-color: #242d3d;
+  background-image: url(/resources/img/palomita.png);
+  background-repeat: repeat;
+}

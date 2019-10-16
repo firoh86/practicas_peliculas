@@ -5,6 +5,8 @@ const pug = require('gulp-pug');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
+const babel = require('gulp-babel');
+const uglify = require("gulp-uglify")
 
 //Constante para el modulo de recarga automática del sitio web al hacer cambios
 const browserSync = require('browser-sync')
@@ -12,14 +14,17 @@ const browserSync = require('browser-sync')
 const server = browserSync.create()
 
 
-// gulp.task('css', () => {
-//   return gulp.src('./dev/css/*.css')
-//     .pipe(concat('styles-dist.css'))
-//     .pipe(cssmin())
-//     .pipe(gulp.dest('./public/css'))
-// });
+gulp.task('js', () => {
+  return gulp.src('./dev/js/*.js')
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat("scripts-min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/js'))
+});
 
-gulp.task("styles", () => {
+gulp.task('styles', () => {
   return gulp
     .src('./dev/scss/styles.scss')
     .pipe(plumber())
@@ -50,7 +55,8 @@ gulp.task('default', () => {
     server: './public'
   })
   gulp.watch('./dev/pug/**/*.pug', gulp.series('pug')).on('change', server.reload)
-  gulp.watch('./dev/scss/**/*.scss', gulp.series('styles'))
+  gulp.watch('./dev/scss/**/*.scss', gulp.series('styles')).on('change', server.reload)
+  gulp.watch('./dev/js/*.js', gulp.series('js')).on('change', server.reload)
 })
 
 

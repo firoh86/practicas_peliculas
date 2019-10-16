@@ -1,0 +1,11 @@
+// cover image
+.background-logo {
+  height: calc(100vh - 270px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  color: rgb(116, 116, 116);
+  font-size: 1.2em;
+}

@@ -1,0 +1,43 @@
+.films-container {
+  box-sizing: content-box;
+  padding: 2em;
+  max-width: 100vw;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1.6em;
+}
+.--oneFilm {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.film {
+  position: relative;
+  background: rgb(39, 38, 38);
+  box-sizing: content-box;
+  padding: 0.5em;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px rgba($color: #000000, $alpha: 0.3);
+}
+.search__form {
+  display: flex;
+  justify-content: space-between;
+}
+.search__form input {
+  margin: 0 0.6em;
+}
+.film__poster {
+  cursor: pointer;
+  min-width: 90%;
+}
+.fa-star {
+  cursor: pointer;
+  color: rgb(255, 196, 0);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 300;
+}

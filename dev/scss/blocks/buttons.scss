@@ -1,0 +1,23 @@
+.button {
+  padding-right: 0.4em;
+  padding-left: 0.8em;
+  color: white;
+  border: 1px solid #bdbdbd;
+  background: #a36736;
+  cursor: pointer;
+  width: 150px;
+  padding: 0.3em;
+}
+.button:hover {
+  transform: scale(0.9);
+}
+.button--rounded {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 1.4em;
+  border-radius: 50%;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+}

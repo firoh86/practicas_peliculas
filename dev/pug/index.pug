@@ -1,3 +1,14 @@
 extends template/template
-include ../mixin/mixin
+
+block header
+  include includes/register
+  include includes/login-form
+block main
+  .background-logo
+    img(src="resources/img/cartelera_de_cine.png")
+    p Debes estar registrado para navegar en la web.
+block footer
+  include includes/footer
+
+
 
